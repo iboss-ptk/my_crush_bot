@@ -6,7 +6,7 @@ defmodule MyCrushBotWeb.BotController do
   plug(Line.Signature.Verification.Plug)
 
   def webhook(conn, %{"events" => [%{"replyToken" => replyToken}]}) do
-    messages = [text(Enum.random(["olo", "หน้ามึงสิ"]))]
+    messages = [text(Enum.random(["ค่ะ", "ใช่", "อือ", "vnv", "555"]))]
 
     case messages |> reply(replyToken) do
       {:ok, resp} ->
