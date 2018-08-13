@@ -1,4 +1,7 @@
 # MyCrushBot
+[![CircleCI](https://circleci.com/gh/iboss-ptk/my_crush_bot.svg?style=svg)](https://circleci.com/gh/iboss-ptk/my_crush_bot)
+
+
 
 To start your Phoenix server:
 
