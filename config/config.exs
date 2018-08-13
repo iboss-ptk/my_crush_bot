@@ -10,8 +10,12 @@ config :my_crush_bot, MyCrushBotWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "dVOSQHsM2YtYFrQa1ud6t0RU+6mxzM74+kowcLa8E2qrLSSnNDrCGI9ZTXQ3phSJ",
   render_errors: [view: MyCrushBotWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: MyCrushBot.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: MyCrushBot.PubSub, adapter: Phoenix.PubSub.PG2]
+
+# Configures Line secrets
+config :my_crush_bot, Line,
+  channel_secret: System.get_env("LINE_CHANNEL_SECRET"),
+  channel_access_token: System.get_env("LINE_CHANNEL_ACCESS_TOKEN")
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -20,4 +24,4 @@ config :logger, :console,
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
